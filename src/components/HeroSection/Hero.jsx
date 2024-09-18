@@ -68,6 +68,7 @@ import { Link } from "react-router-dom";
 import { BackgroundLines } from "../ui/background-lines";
 import HyperText from "../magicui/hyper-text";
 import NumberTicker from "../magicui/number-ticker";
+import { OrbitingCirclesDemo } from "../Circles";
 const Hero = () => {
     const parallaxRef = useRef(null);
     const words = `The Best Doctor is the one who treats the patient not the disease 
@@ -207,9 +208,9 @@ const Hero = () => {
                         </div> */}
                         <div className="z-0 opacity-100 dark:opacity-100">
 
-                        <img src="/HealersHealthcareOfficialLogo.png" alt="HealersLogoHero"
-                        className=" CompanyLogo object-cover hidden xl:flex w-[800px] h-[240px] hover:scale-110 transition duration-300"/>
+                        
                         </div>
+                        <OrbitingCirclesDemo className></OrbitingCirclesDemo>
                     </div>
 
 
