@@ -172,11 +172,11 @@ const Hero = () => {
                     </h1> */}
                     
                     
-                    <div className="HeroTitleAndSubTitle  w-full flex  justify-around items-center ">
+                    <div className="HeroTitleAndSubTitle  w-full grid grid-cols-1 lg:grid-cols-2  ">
 
                         
 
-                        <div className=" flex flex-col justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
+                        <div className=" flex flex-col md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
 
                             <div className="HeroTitle flex flex-col ">
                             <TypewriterEffectSmooth words={HeaderWords} nextline={false}/>
@@ -206,11 +206,8 @@ const Hero = () => {
                         text-7xl font-bold bg-gradient-to-r from-[#9029c1] via-[#00e7ea] to-[#5079d8] inline-block text-transparent drop-shadow-2xl bg-clip-text">Healthcare</h1>
                         </div>                         
                         </div> */}
-                        <div className="z-0 opacity-100 dark:opacity-100">
-
-                        
-                        </div>
-                        <OrbitingCirclesDemo className></OrbitingCirclesDemo>
+                      
+                        <OrbitingCirclesDemo className=""></OrbitingCirclesDemo>
                     </div>
 
 

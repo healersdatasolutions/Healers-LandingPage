@@ -18,7 +18,7 @@ export function OrbitingCirclesDemo() {
     <div className="hidden lg:flex relative  h-[700px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-transparent ">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
       <img src="/HealersHealthcareOfficialLogo.png" alt="HealersLogoHero"
-                        className=" CompanyLogo object-cover hidden xl:flex w-[600px] h-[240px] hover:scale-110 transition duration-300 opacity-50"/>
+                        className=" CompanyLogo object-cover hidden xl:flex w-[600px] h-[240px] hover:scale-110 transition duration-300 opacity-100 dark:opacity-50"/>
       </span>
 
       {/* Inner Circles */}
@@ -53,7 +53,7 @@ export function OrbitingCirclesDemo() {
       {/* Outer Circles (reverse) */}
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
-        radius={260}
+        radius={240}
         duration={20}
         reverse
       >
@@ -61,7 +61,7 @@ export function OrbitingCirclesDemo() {
         <div className="hidden border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
                   <a
                     href="https://twitter.com/Healers_Health"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full  text-dark   dark:border-dark-3 dark:text-cyan-500 dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full  text-cyan-500   dark:border-dark-3 dark:text-cyan-500 dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width="50"
@@ -85,7 +85,7 @@ export function OrbitingCirclesDemo() {
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
-        radius={350}
+        radius={325}
         duration={20}
         delay={20}
         reverse
@@ -96,7 +96,7 @@ export function OrbitingCirclesDemo() {
                                         
                                         <a
                     href="https://www.linkedin.com/company/healershealthcare/"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full text-dark  dark:border-dark-3 dark:text-blue-700 dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full text-blue-700  dark:border-dark-3 dark:text-blue-700 dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width="50"
