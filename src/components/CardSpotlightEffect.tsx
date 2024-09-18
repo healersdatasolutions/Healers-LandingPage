@@ -18,6 +18,8 @@ import { TracingBeam } from "./ui/tracing-beam";
 import BentoGrid2 from "./BentoGrid2";
 import Footer from "./Footer/Footer";
 import Features3 from "./FeatureSection/Feature3";
+import HospitalCarousel from "./Hospital-Carousel";
+import VideoComponent from "./Youtube-Video";
 
 export const CardSpotlightEffect1 = () => {
     const divRef = useRef<HTMLDivElement>(null);
@@ -106,6 +108,18 @@ export const CardSpotlightEffect1 = () => {
   </p> 
         
   <BentoGrid2/>
+
+  
+  </TracingBeam>
+  <p id="ytLinks" className="mt-36 sm:mt-56 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
+    Latest From Our Creators and Partners
+  </p>  
+  <VideoComponent/>
+
+  <p id="clients" className="mt-36 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
+    Clients Onboard with Us
+  </p> 
+  <HospitalCarousel/>
        <MobileAppSection/>
 
 
@@ -130,7 +144,7 @@ export const CardSpotlightEffect1 = () => {
         <BackgroundBoxesDemo/>
 
 
-      </TracingBeam>
+      
       <Footer/>
 
 

@@ -86,6 +86,9 @@ const Footer = () => {
                 <ScrollTo to="downloadMobileApp">
                   Download App
                 </ScrollTo>
+                <ScrollTo to="clients">
+                  Our Clients
+                </ScrollTo>
                 
               </div>
               
