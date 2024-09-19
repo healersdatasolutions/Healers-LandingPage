@@ -2,17 +2,17 @@
 // import { curve, loading, yourlogo } from "../../assets";
 // import Button from "../Buttons/Button";
 import Section from "../Section/Section";
-import { ScrollParallax} from "react-just-parallax";
-import {useRef} from "react";
+import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
 // import { cn } from "../../lib/utils";
 // import Notification from "../Notification/Notification";
 // import PlusSvg from "../../assets/svg/PlusSvg";
 // import PropTypes from "prop-types";
 // import Video from "../Video";
-import { gradient, yourlogo} from "../../assets";
+import { gradient, yourlogo } from "../../assets";
 // import Lottie from 'react-lottie';
 // import animationData1 from '../../lotties/medicalIcon1.json';
-import {Tooltip} from "flowbite-react";
+import { Tooltip } from "flowbite-react";
 
 
 // const defaultOptions = {
@@ -23,7 +23,7 @@ import {Tooltip} from "flowbite-react";
 //       preserveAspectRatio: "xMidYMid slice"
 //     }
 //   };
- 
+
 // import DNA from "../3D_Elements/DNA";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 // import { TypewriterEffectSmoothDemo } from "../Typewriter";
@@ -36,78 +36,92 @@ import { AbstractIcon } from "../Icons";
 
 const HeaderWords = [
     {
-      text: "Treatment",
-      className: "text-black dark:text-[#c4c3c3]",
+        text: "Treatment",
+        className: "text-black dark:text-[#c4c3c3]",
     },
     {
-      text: "With",
-      className: "text-black dark:text-[#c4c3c3]",
+        text: "With",
+        className: "text-black dark:text-[#c4c3c3]",
     },
-    
-   
-  ];
 
-  const HeaderWords2 = [
+
+];
+
+const HeaderWords2 = [
     {
         text: "The",
         className: "text-black dark:text-[#c4c3c3]",
-      },
-    {
-      text: "Best",
-      className: "text-black dark:text-[#c4c3c3]",
     },
     {
-      text: "Doctor",
-      className: "text-black dark:text-white",
-      
+        text: "Best",
+        className: "text-black dark:text-[#c4c3c3]",
     },
-  ];
+    {
+        text: "Doctor",
+        className: "text-black dark:text-white",
+
+    },
+];
 
 import { useTheme } from '../../components/ThemeProvider/theme-provider';
 import { Link } from "react-router-dom";
 import { BackgroundLines } from "../ui/background-lines";
 import HyperText from "../magicui/hyper-text";
 import NumberTicker from "../magicui/number-ticker";
-import { OrbitingCirclesDemo } from "../Circles";
+import DNA from "../3D_Elements/DNA";
+// import { OrbitingCirclesDemo } from "../Circles";
+
 const Hero = () => {
     const parallaxRef = useRef(null);
     const words = `The Best Doctor is the one who treats the patient not the disease 
 `;
-    
+
     const { theme } = useTheme();
 
     const dark = theme === 'dark';
     return (
-        
-        <Section className="" crosses crossesOffset="lg:translate-y-[5.25rem]" customPaddings id="hero">
-            <BackgroundLines className="">
-                
-            <div className="h-[60rem] sm:h-[60rem] w-full rounded-md flex md:items-center md:justify-center bg-transparent dark:bg-black/[0.80] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Spotlight
-        className="-top-90 sm:-top-40 left-0 md:left-60 md:-top-20"
-        fill={dark? "#fff" : "#000"}
-      />
-      {/* <div className="absolute translate-x-[28rem] -translate-y-[5rem]  rotate-[285deg] z-5">
-            <img alt="dna" src="/dna2.png " className=" opacity-100 w-[80%] z-20" />
-            </div> */}
-      <div className="absolute w-full flex justify-end items-end">
-      
+        <>
+            <div className="hidden  absolute xl:flex justify-end  w-full  h-full z-[1] overflow-hidden">
+                <div className="w-full translate-x-16">
 
-        <ScrollParallax className="w-full ">
-            <div className="flex -ml-40">
+                <DNA />
+                </div>
 
-            <AbstractIcon className="z-20 -ml-20"/>
+
+
 
             </div>
+            <Section className="" crosses crossesOffset="lg:translate-y-[5.25rem]" customPaddings id="hero">
 
-        </ScrollParallax>
-            
-        
-      </div>
-            <div className="subContainer" >
+                <BackgroundLines className="">
 
 
-                {/* <MouseParallax ref={parallaxRef} className="relative z-10">
+                    <div className="h-[60rem] lg:h-screen md:h-[60rem] w-full rounded-md flex md:items-center md:justify-center bg-transparent dark:bg-black/[0.80] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+                        <Spotlight
+                            className="-top-90 sm:-top-40 left-0 md:left-60 md:-top-20"
+                            fill={dark ? "#fff" : "#000"}
+                        />
+                        {/* <div className="absolute translate-x-[28rem] -translate-y-[5rem]  rotate-[285deg] z-5">
+            <img alt="dna" src="/dna2.png " className=" opacity-100 w-[80%] z-20" />
+            </div> */}
+                        <div className="absolute w-full flex justify-end items-end">
+
+
+                            <ScrollParallax className="w-full ">
+                                <div className="flex -ml-40">
+
+                                    <AbstractIcon className="z-20 -ml-20" />
+
+                                </div>
+
+                            </ScrollParallax>
+
+
+                        </div>
+                        <div className="subContainer" >
+
+
+                            {/* <MouseParallax ref={parallaxRef} className="relative z-10">
 
                     
                 <div className="hidden sm:block absolute inset-0 right- w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
@@ -117,80 +131,80 @@ const Hero = () => {
                 </div>
                 </MouseParallax> */}
 
-              
-                
-
-                
-                
 
 
-                <div className="absolute top-[30.25rem] -right-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                        <img className="w-full" src={gradient} width={942} height={942} alt="" />
-                    </div>
-                </div>
-                <div className="absolute top-[40.25rem] left-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                        <img className="w-full" src={gradient} width={942} height={942} alt="" />
-                    </div>
-                </div>
 
-                {!dark && (
-                    <div>
 
-                        <div className="absolute top-[10.25rem] left-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                            <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                                <img className="w-full" src={gradient} width={942} height={942} alt="" />
+
+
+
+                            <div className="absolute top-[30.25rem] -right-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
+                                <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
+                                    <img className="w-full" src={gradient} width={942} height={942} alt="" />
+                                </div>
                             </div>
-                        </div>
-                        <div className="absolute z-10 top-[60.25rem] left-[45.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                        <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                            <img className="w-full" src={gradient} width={942} height={942} alt="" />
-                        </div>
-                    </div>
-                    <div className="absolute z-10 top-[50.25rem] left-[5.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                        <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                            <img className="w-full" src={gradient} width={942} height={942} alt="" />
-                        </div>
-                    </div>
-                    </div>
-                )}
-            
-            <div className="container relative" ref={parallaxRef}>
-                <div className="relative z-1 top-20 sm:top-40  max-w-full mb-[3.875rem] md:mb-20 lg:mb-[18.25rem] lg:mt-[1.25rem]">
-                    {/* <h1 className="h1 mb-6 mt-10">
+                            <div className="absolute top-[40.25rem] left-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
+                                <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
+                                    <img className="w-full" src={gradient} width={942} height={942} alt="" />
+                                </div>
+                            </div>
+
+                            {!dark && (
+                                <div>
+
+                                    <div className="absolute top-[10.25rem] left-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
+                                        <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
+                                            <img className="w-full" src={gradient} width={942} height={942} alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="absolute z-10 top-[60.25rem] left-[45.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
+                                        <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
+                                            <img className="w-full" src={gradient} width={942} height={942} alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="absolute z-10 top-[50.25rem] left-[5.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
+                                        <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
+                                            <img className="w-full" src={gradient} width={942} height={942} alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="container " ref={parallaxRef}>
+                                <div className="w-full relative text-center z-0 top-20 sm:top-40  max-w-full mb-[3.875rem] md:mb-20 lg:mb-[18.25rem] lg:mt-[1.25rem]">
+                                    {/* <h1 className="h1 mb-6 mt-10">
                         <span className="text-green-500">
                         Treatment {` `}
                         </span>
                          with the {` `}
                     </h1> */}
-                    {/* <h1 className="h1 mb-6">
+                                    {/* <h1 className="h1 mb-6">
                   
                         <span className="inline-block relative">
                             Best Doctor <img src={curve} className="absolute top-full left-0 w-full xl:-mt-2" width={624} height={28} alt="" />
                         </span>
                     </h1> */}
-                    
-                    
-                    <div className="HeroTitleAndSubTitle  w-full grid grid-cols-1 lg:grid-cols-2  ">
-
-                        
-
-                        <div className=" flex flex-col md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
-
-                            <div className="HeroTitle flex flex-col ">
-                            <TypewriterEffectSmooth words={HeaderWords} nextline={false}/>
-                            <TypewriterEffectSmooth words={HeaderWords2} nextline={true}/>
-
-                            </div>
-        
-                            <div className="subtext w-[75%] text-center lg:text-left" >
-                                <TextGenerateEffect words={words} />
-                            </div>
-                        </div>
 
 
-                        {/* <div className="hidden lg:flex flex-row  items-center justify-center h-[20rem]  ">
+                                    <div className="HeroTitleAndSubTitle  w-full grid grid-cols-1 lg:grid-cols-2  ">
+
+
+
+                                        <div className=" flex flex-col  md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
+
+                                            <div className="HeroTitle flex flex-col ">
+                                                <TypewriterEffectSmooth words={HeaderWords} nextline={false} />
+                                                <TypewriterEffectSmooth words={HeaderWords2} nextline={true} />
+
+                                            </div>
+
+                                            <div className="subtext w-[75%] text-center lg:text-left" >
+                                                <TextGenerateEffect words={words} />
+                                            </div>
+                                        </div>
+
+
+                                        {/* <div className="hidden lg:flex flex-row  items-center justify-center h-[20rem]  ">
                         
                         <img
                             src="/HealersHealthcareLogo.png"
@@ -206,76 +220,86 @@ const Hero = () => {
                         text-7xl font-bold bg-gradient-to-r from-[#9029c1] via-[#00e7ea] to-[#5079d8] inline-block text-transparent drop-shadow-2xl bg-clip-text">Healthcare</h1>
                         </div>                         
                         </div> */}
-                      
-                        <OrbitingCirclesDemo className=""></OrbitingCirclesDemo>
-                    </div>
+                                        <div>
+
+                                            {/* <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
+      <img src="/HealersHealthcareOfficialLogo.png" alt="HealersLogoHero"
+                        className=" CompanyLogo object-cover hidden xl:flex w-[600px] h-[240px] hover:scale-110 transition duration-300 opacity-100 dark:opacity-50"/>
+      </span> */}
+
+
+                                        </div>
+                                    </div>
+                                    <ScrollParallax className="w-full xl:hidden">
 
 
 
-                    <ScrollParallax className="w-full ">
-           
+                                        <div className="w-full z-40 flex  xl:hidden justify-center lg:justify-end mt-15 sm:-mt-10  ">
 
-        
-                    <div className="w-full flex justify-center lg:justify-end mt-15 sm:-mt-10  ">
-                
-                <div className="flex flex-col gap-2 bg-[#c4c4c492] dark:bg-[#1a1a1a92] p-5 rounded-lg hover:scale-105 transition duration-300">
+                                            <div className="flex flex-col px-5 py-1 gap-2 bg-transparent backdrop-blur border border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
 
-                <HyperText 
-      className="text-xl font-bold text-black dark:text-white -mb-3"
-      text="Join Our Comunity"
-    />
-    <div className="flex gap-2 ">
-        
-    <NumberTicker value={10000} />
-    <p>{` `}Joins</p>
-    </div>
-    <HyperText 
-      className="text-xl font-bold text-black dark:text-white -mb-3"
-      text="Our Branch"
-    />
-   <div className="flex gap-2">
-        
-        <NumberTicker value={100} />
-        <p>{` `}Connections</p>
-        </div>
-                </div>
-                    </div>
-                    </ScrollParallax>
+                                                <HyperText
+                                                    className="text-xl font-bold text-gray-500 dark:text-white -mb-3"
+                                                    text="Join Our Comunity"
+                                                />
+                                                <div className="flex gap-2 ">
+
+                                                    <NumberTicker value={10000} />
+                                                    <p className=" text-gray-500 dark:text-white">{` `}Joins</p>
+                                                </div>
+                                                <HyperText
+                                                    className="text-xl font-bold  text-gray-500 dark:text-white -mb-3"
+                                                    text="Our Branch"
+                                                />
+                                                <div className="flex gap-2">
+
+                                                    <NumberTicker value={100} />
+                                                    <p className=" text-gray-500 dark:text-white">{` `}Connections</p>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
-                </div>
-
-                <div className="bottomButtonsSticky fixed inset-0 top-auto  w-full z-50 flex justify-around mb-10">
-                <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
-                    <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
-                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                        <span className="text-black inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#fff] px-3 py-1 text- font-medium backdrop-blur-3xl ">
-                            Download Our Mobile App 
-                        </span>
-                    </button> 
-                    </Tooltip>
-                    <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
-                        <Link to="/login-signup">
-                            <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
-                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                        <span className="text-[#c4c3c3] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#000000] px-3 py-1 text- font-medium backdrop-blur-3xl ">
-                            Login as a Hospital 
-                        </span>
-                    </button>
-                        </Link>
-                    </Tooltip>
-
-                     
-                </div>
-            </div>
-
-            
-            
+                                    </ScrollParallax>
 
 
 
-                            
-                {/* <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
+
+
+
+                                </div>
+
+                            </div>
+                                <div className="bottomButtonsSticky fixed inset-0 top-auto  w-full z-50 flex justify-around mb-10">
+                                    <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+                                        <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
+                                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                                            <span className="text-black inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#fff] px-3 py-1 text- font-medium backdrop-blur-3xl ">
+                                                Download Our Mobile App
+                                            </span>
+                                        </button>
+                                    </Tooltip>
+                                    <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+                                        <Link to="/login-signup">
+                                            <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
+                                                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                                                <span className="text-[#c4c3c3] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#000000] px-3 py-1 text- font-medium backdrop-blur-3xl ">
+                                                    Login as a Hospital
+                                                </span>
+                                            </button>
+                                        </Link>
+                                    </Tooltip>
+
+
+                                </div>
+
+
+
+
+
+
+
+                            {/* <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
                     <div className="relative z-1 p-0.5 rounded-2xl ">
                         <div className="relative bg-n-8 rounded-[1rem]">
                             <div className=" rounded-t-[0.9rem]" />
@@ -312,31 +336,50 @@ const Hero = () => {
                     <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
                     </div>
                 </div> */}
-            </div>
-    </div>
+                        </div>
+                    <div className="mr-24 z-40 ">
 
-{/* 
-                <div className="hidden relative z-10 mt-20 lg:block">
-                    <h5 className="tagline mb-6 text-center text-white/50">Helping people create beautiful content at</h5>
-                    <ul className="flex">
-                        <li className="flex items-center justify-center flex-1 h-[8.5rem]">
-                            <img src={yourlogo} width={134} height={28} alt="" />
-                        </li>
-                        <li className="flex items-center justify-center flex-1 h-[8.5rem]">
-                            <img src={yourlogo} width={134} height={28} alt="" />
-                        </li>
-                        <li className="flex items-center justify-center flex-1 h-[8.5rem]">
-                            <img src={yourlogo} width={134} height={28} alt="" />
-                        </li>
-                        <li className="flex items-center justify-center flex-1 h-[8.5rem]">
-                            <img src={yourlogo} width={134} height={28} alt="" />
-                        </li>
-                    </ul>
-                </div> */}
+                    <ScrollParallax className="w-full mr-24">
 
-                                            
-        </BackgroundLines>
-        </Section>
+
+
+                        <div className="w-full  hidden xl:flex z-40  justify-center xl:justify-end mt-15   ">
+
+                            <div className="flex flex-col px-5 py-1 gap-2 bg-transparent backdrop-blur border border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
+
+                                <HyperText
+                                    className="text-xl font-bold text-gray-500 dark:text-white -mb-3"
+                                    text="Join Our Comunity"
+                                />
+                                <div className="flex gap-2 ">
+
+                                    <NumberTicker value={10000} />
+                                    <p className=" text-gray-500 dark:text-white">{` `}Joins</p>
+                                </div>
+                                <HyperText
+                                    className="text-xl font-bold  text-gray-500 dark:text-white -mb-3"
+                                    text="Our Branch"
+                                />
+                                <div className="flex gap-2">
+
+                                    <NumberTicker value={100} />
+                                    <p className=" text-gray-500 dark:text-white">{` `}Connections</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                    </ScrollParallax>
+                    </div>
+                    </div>
+
+
+
+                </BackgroundLines>
+            </Section>
+        </>
+
     );
 };
 

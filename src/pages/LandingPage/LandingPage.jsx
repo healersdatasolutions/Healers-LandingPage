@@ -1,58 +1,60 @@
-// import { AnimatedTooltipPreview } from '../../components/3dPinTest';
-// import { HeroScrollDemo } from '../../components/ScrollHero';
-// import Roadmap from '../../components/FeatureSection/Feature';
-import Hero from '../../components/HeroSection/Hero';
-// import Navbar from '../../components/Navbar/Navbar';
-// import DNA from '../../components/3D_Elements/DNA';
-// import { AnimatedPinDemo } from '../../components/3dPinReal';
-// import { BackgroundBoxesDemo } from '../../components/BackgroundBoxes';
-import { CardSpotlightEffect1 } from '../../components/CardSpotlightEffect';
+'use client'
 
-// import { BackgroundBoxesDemo } from '../../components/BackgroundBoxes';
-// import { HeroScrollDemo } from '../../components/ScrollHero';
-// import { AnimatedPinDemo } from '../../components/3dPinReal';
-// import Roadmap from '../../components/FeatureSection/Feature';
-import { NavbarDemo } from '../../components/Navbar/Navbar2';
-// import { Hero2 } from '../../components/HeroSection/Hero2';
-// import MetaMaskLogo from '../../components/MetamaskLogo';
+import React, { useRef, useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import Hero from '../../components/HeroSection/Hero'
+// import { CardSpotlightEffect1 } from '../../components/CardSpotlightEffect'
+import { NavigationMenuNew } from '../../components/Navbar/Navbar3'
 
+const LazyComponent = React.lazy(() => import('../../components/LazyComponent'))
 
-// import { AppleCardsCarouselDemo } from '../../components/ExpandableCarousel';
-// import '../../index.css';
-
-
-
-
-    import { useTheme } from '../../components/ThemeProvider/theme-provider';
-import { NavigationMenuNew } from '../../components/Navbar/Navbar3';
 function LandingPage() {
-    const { theme } = useTheme();
+  const [heroRef, heroInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  })
 
-    const backgroundImage = theme === 'dark' ? '/webglBG.png' : '/webgl3.jpg';
+  const [cardRef, cardInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  })
 
-    return (
-      <>
-  
-        {/* <section style={{ backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-         
-    
-         }}> */}
-          {/* <NavbarDemo/> */}
-          <NavigationMenuNew/>
-          <Hero/>
-      
-        {/* </section> */}
+  const [heroMounted, setHeroMounted] = useState(false)
+  const [cardMounted, setCardMounted] = useState(false)
 
-     
-        <CardSpotlightEffect1/>
-      </>
-    );
+  useEffect(() => {
+    if (heroInView) {
+      setHeroMounted(true)
+    } else {
+      const timer = setTimeout(() => setHeroMounted(false), 500)
+      return () => clearTimeout(timer)
+    }
+  }, [heroInView])
+
+  useEffect(() => {
+    if (cardInView) {
+      setCardMounted(true)
+    } else {
+      const timer = setTimeout(() => setCardMounted(false), 500)
+      return () => clearTimeout(timer)
+    }
+  }, [cardInView])
+
+  return (
+    <>
+      <NavigationMenuNew />
+      <div ref={heroRef}>
+        {heroMounted && <Hero />}
+      </div>
+      <div ref={cardRef}>
+        {cardMounted && (
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <LazyComponent />
+          </React.Suspense>
+        )}
+      </div>
+    </>
+  )
 }
 
-
-export default LandingPage;
-   
-
+export default LandingPage
