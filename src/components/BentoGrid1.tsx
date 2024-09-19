@@ -11,13 +11,13 @@ import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collisi
 import DotPattern from "./magicui/dot-pattern";
 
 const FeatureBox = ({ title, description, key }) => {
-  const colorChoice = ["bg-violet-500", "bg-violet-600", "bg-green-600", "bg-red-600", "bg-yellow-600"][Math.floor(Math.random() * 5)];
+  const colorChoice = ["bg-violet-600", "bg-blue-700", "bg-yellow-700"][Math.floor(Math.random() * 5)];
   
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <motion.div
-      className={`${colorChoice} bg-opacity-5 border text-black dark:text-gray-300 border-gray-200 dark:border-violet-700 dark:hover:bg-violet-800 hover:dark:border-white text-center transition duration-300 rounded-lg p-2 w-full h-[5rem] flex flex-col justify-evenly items-center overflow-y-hidden `}
+      className={`${colorChoice} bg-opacity-10 border text-black dark:text-gray-300 border-gray-200 dark:border-violet-700 dark:hover:bg-violet-800 hover:dark:border-white text-center transition duration-300 rounded-lg p-2 w-full h-[5rem] flex flex-col justify-evenly items-center overflow-y-hidden `}
       initial={{ y: 0 }}
       whileHover={{ y: -10 }}
       animate={{ y: 0 }}
