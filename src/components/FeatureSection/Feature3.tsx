@@ -86,7 +86,7 @@ export default function Feature3() {
             className="[--i:0]"
             style={{ '--e': entered } as React.CSSProperties}
           >
-            <Card className={`relative py-10 bg-[#a1a1a1] dark:bg-[#0b0b0b] border-slate-700 overflow-hidden transition-transform duration-700 ease-in-out
+            <Card className={`relative py-10 bg-[#d7d7d7] dark:bg-[#0b0b0b] border-b-2 dark:border-slate-700 overflow-hidden transition-transform duration-700 ease-in-out
               ${index === 0 ? 'z-[30]' : index === 1 ? 'z-[29]' : index === 2 ? 'z-[28]': 'z-[27]'}
               ${entered >= index ? 'translate-y-0' : '-translate-y-[calc(100%*(var(--i)-var(--e)))]'}`}
             >
