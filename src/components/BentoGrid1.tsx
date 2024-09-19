@@ -7,12 +7,21 @@ import { VelocityScroll } from "./magicui/scroll-based-velocity";
 import { Suspense, lazy } from "react";
 import ClientTweetCard from "./magicui/client-tweet-card";
 import { IconClipboardCopy, IconFileBroken, IconSignature, IconTableColumn, IconBoxAlignRightFilled } from "@tabler/icons-react"
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+
+const FeatureBox = ({ title, description }) => (
+  <motion.div
+    className="border border-gray-200 dark:border-gray-700 rounded-lg p-2 flex flex-col justify-between h-full"
+    whileHover={{ borderColor: "#9333ea", boxShadow: "0 0 0 2px rgba(147, 51, 234, 0.3)" }}
+  >
+    <h4 className="text-sm font-semibold mb-1">{title}</h4>
+    <p className="text-xs text-gray-600 dark:text-gray-400">{description}</p>
+  </motion.div>
+);
 
 export async function TweetDemo() {
   return <ClientTweetCard id="1835722369819971792" className="shadow-2xl" />;
 }
-
-// import Image from "next/image";
 
 export function BentoGridThirdDemo() {
   return (
@@ -32,109 +41,66 @@ export function BentoGridThirdDemo() {
         />
       ))}
     </BentoGrid>
-    <div className="z-10 rotate-6">
-
+    {/* <div className="z-10 rotate-6">
             <VelocityScroll
             text="Wait We Have More"
             default_velocity={1}
-            
             className=" font-display text-center text-4xl font-bold tracking-[-0.02em] text-black/70 drop-shadow-sm dark:text-white/30 md:text-7xl md:leading-[5rem]"
           />
-        </div>
+        </div> */}
     </>
   );
 }
 
 
 const SkeletonOne = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
+  const features = [
+    { title: "Patient Data Management", description: "Secure and organized record-keeping" },
+    { title: "Appointment Scheduling", description: "Streamlined OPD management" },
+    { title: "Digital Solutions", description: "Customized landing pages and SEO" },
+    { title: "Promised Growth", description: "20-30% increase in operations" },
+  ];
 
   return (
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 p-2"
     >
-      <motion.div
-        variants={variants}
-        className="flex opacity-65 flex-row rounded-full border border-gray-700 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black"
-      >
-        <div className="h-6 text-center flex hover:scale-90 transition duration-300 justify-center items-center rounded-full bg-gradient-to-r from-[#ffb246] to-violet-500 flex-shrink-0"><p className="text-xs text-center  px-2">View Patient</p></div>
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" ><p className="text-xs px-2">Name: Jhon Age: 28 Gender: Male ...</p></div>
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex opacity-65 flex-row rounded-full border border-gray-700 dark:border-white/[0.2] p-2 items-center space-x-2 w-full ml-auto bg-white dark:bg-black"
-      >
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" ><p className="text-xs px-2">Name: Rune Age: 22 Gender: Female ...</p></div>
-        <div className="h-6  rounded-full hover:scale-90 transition duration-300 flex justify-center items-center bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" ><p className="text-xs text-center  px-2">View Patient</p></div>
-      </motion.div>
-      <motion.div
-        variants={variants}
-        className="flex opacity-65 flex-row rounded-full border border-gray-700 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black"
-      >
-        <div className="h-6 text-center hover:scale-90 transition duration-300 flex justify-center items-center rounded-full bg-gradient-to-r from-[#ffb246] to-violet-500 flex-shrink-0"><p className="text-xs text-center  px-2">View Patient</p></div>
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" ><p className="text-xs px-2">Name: Dylan Age: 46 Gender: Male ...</p></div>
-      </motion.div>
-      
+      <div className="grid grid-cols-2 gap-2 flex-grow">
+        {features.map((feature, index) => (
+          <BackgroundBeamsWithCollision>
+
+            <FeatureBox key={index} title={feature.title} description={feature.description} />
+          </BackgroundBeamsWithCollision>
+        ))}
+      </div>
     </motion.div>
   );
 };
+
 const SkeletonTwo = () => {
-  const measures = [
-    { name: "Blood Pressure", value: 70 },
-    { name: "Cholesterol", value: 90 },
-    { name: "Sugar Level", value: 40 },
-    { name: "Heart Rate", value: 60 },
-    { name: "BMI", value: 80 },
-  ]
+  const features = [
+    { title: "Mobile Application", description: "User-friendly Android app" },
+    { title: "Health Record Access", description: "Convenient digital records" },
+    { title: "Reward System", description: "Every 10th appointment free" },
+    { title: "NFTs & Crypto Tokens", description: "Redeemable for services" },
+  ];
 
   return (
     <motion.div
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 p-4"
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 p-2"
     >
-      {measures.map((measure, i) => (
-        <motion.div
-          key={`measure-${i}`}
-          className="flex flex-row items-center space-x-2"
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-        >
-          <div className="w-24 text-xs">{measure.name}</div>
-          <motion.div
-            className={`h-4 rounded-full ${measure.value < 50 ? 'bg-yellow-400' : 'bg-green-400'}`}
-            initial={{ width: 0 }}
-            animate={{ width: `${measure.value}%` }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-          />
-        </motion.div>
-      ))}
+      <div className="grid grid-cols-2 gap-2 flex-grow">
+        {features.map((feature, index) => (
+           <BackgroundBeamsWithCollision>
+
+             <FeatureBox key={index} title={feature.title} description={feature.description} />
+           </BackgroundBeamsWithCollision>
+        ))}
+      </div>
     </motion.div>
-  )
+  );
 };
 const SkeletonThree = () => {
   const variants = {
@@ -175,7 +141,7 @@ const SkeletonFour = () => {
   const first = {
     initial: {
       x: 20,
-      rotate: -5,
+     
     },
     hover: {
       x: 0,
@@ -185,7 +151,7 @@ const SkeletonFour = () => {
   const second = {
     initial: {
       x: -20,
-      rotate: 5,
+
     },
     hover: {
       x: 0,
@@ -201,7 +167,7 @@ const SkeletonFour = () => {
     >
       <motion.div
         variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1]  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <img
           src="https://www.citizenshospitals.com/static/uploads/130789a4-764e-4ee3-88fe-68f9278452d6-1692966652977.png"
@@ -211,12 +177,12 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-xl text-xs text-center font-semibold text-neutral-500 mt-4">
-        Dr. Smith
+        Dr. John
         </p>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
         Neurosurgeon
         </p>
-        <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
+        <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Available
         </p>
       </motion.div>
@@ -229,12 +195,12 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-xl text-xs text-center font-semibold text-neutral-500 mt-4">
-        Dr. Smith
+        Dr. Amy
         </p>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
-        Neurosurgeon
+        ENT
         </p>
-        <p className="border border-yellow-500 bg-yellow-100 dark:bg-yellow-900/20 text-yellow-600 text-xs rounded-full px-2 py-0.5 mt-4">
+        <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Busy
         </p>
       </motion.div>
@@ -255,7 +221,7 @@ const SkeletonFour = () => {
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
         Pediatrician
         </p>
-        <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
+        <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Available
         </p>
       </motion.div>
@@ -321,10 +287,10 @@ const SkeletonFive = () => {
 };
 const items = [
   {
-    title: "Patient Data Management",
+    title: "For Hospitals",
     description: (
       <span className="text-sm">
-        Retrival of Patient Data Directly from the Canister.
+        Comprehensive solutions for efficient hospital management and growth.
       </span>
     ),
     header: <SkeletonOne />,
@@ -332,10 +298,10 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Track Patient's Status",
+    title: "For Patients",
     description: (
       <span className="text-sm">
-        Monitor vital signs and health metrics in real-time.
+        User-friendly app with rewards and convenient health record access.
       </span>
     ),
     header: <SkeletonTwo />,

@@ -48,7 +48,7 @@ export default function NumberTicker({
     // make the the count animation starts again whenever there's a on MouseEnter event
     <span 
       className={cn(
-        "inline-block tabular-nums text-black dark:text-white tracking-wider",
+        "inline-block tabular-nums  text-gray-500 dark:text-white tracking-wider",
         className,
       )}
       ref={ref}
