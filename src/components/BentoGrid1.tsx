@@ -2,22 +2,62 @@
 import { cn } from "../lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { VelocityScroll } from "./magicui/scroll-based-velocity";
 import { Suspense, lazy } from "react";
 import ClientTweetCard from "./magicui/client-tweet-card";
 import { IconClipboardCopy, IconFileBroken, IconSignature, IconTableColumn, IconBoxAlignRightFilled } from "@tabler/icons-react"
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import DotPattern from "./magicui/dot-pattern";
 
-const FeatureBox = ({ title, description }) => (
-  <motion.div
-    className="border border-gray-200 dark:border-gray-700 rounded-lg p-2 flex flex-col justify-between h-full"
-    whileHover={{ borderColor: "#9333ea", boxShadow: "0 0 0 2px rgba(147, 51, 234, 0.3)" }}
-  >
-    <h4 className="text-sm font-semibold mb-1">{title}</h4>
-    <p className="text-xs text-gray-600 dark:text-gray-400">{description}</p>
-  </motion.div>
-);
+const FeatureBox = ({ title, description, key }) => {
+  const colorChoice = ["bg-violet-500", "bg-violet-600", "bg-green-600", "bg-red-600", "bg-yellow-600"][Math.floor(Math.random() * 5)];
+  
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <motion.div
+      className={`${colorChoice} bg-opacity-5 border text-black dark:text-gray-300 border-gray-200 dark:border-violet-700 dark:hover:bg-violet-800 hover:dark:border-white text-center transition duration-300 rounded-lg p-2 w-full h-[5rem] flex flex-col justify-evenly items-center overflow-y-hidden `}
+      initial={{ y: 0 }}
+      whileHover={{ y: -10 }}
+      animate={{ y: 0 }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      
+      <AnimatePresence>
+        {!isHovered && (
+          <motion.h4
+            className="text font-semibold mb-1 "
+            initial={{ y: 0 }}
+            exit={{ y: -50 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {title}
+            
+            
+          </motion.h4>
+        )}
+        
+      </AnimatePresence>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.p
+            className="text-sm text-gray-600 dark:text-gray-200 overflow-y-hidden"
+            initial={{ y: 50 }}
+            animate={{ y: 0 }}
+            exit={{ y: 50 }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          >
+            {description}
+          </motion.p>
+        )}
+        
+      </AnimatePresence>
+      
+    </motion.div>
+  );
+};
 
 export async function TweetDemo() {
   return <ClientTweetCard id="1835722369819971792" className="shadow-2xl" />;
@@ -26,32 +66,24 @@ export async function TweetDemo() {
 export function BentoGridThirdDemo() {
   return (
     <>
-    <p id="" className="mt-36 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
-    The More You Can Do With Healers
-  </p> 
-    <BentoGrid className=" max-w-7xl mx-auto mt-32 md:auto-rows-[20rem] ">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg] z-20", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
-    {/* <div className="z-10 rotate-6">
-            <VelocityScroll
-            text="Wait We Have More"
-            default_velocity={1}
-            className=" font-display text-center text-4xl font-bold tracking-[-0.02em] text-black/70 drop-shadow-sm dark:text-white/30 md:text-7xl md:leading-[5rem]"
+      <p id="" className="mt-36 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
+        The More You Can Do With Healers
+      </p> 
+      <BentoGrid className="max-w-7xl mx-auto mt-32 md:auto-rows-[20rem]">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg] z-20", item.className)}
+            icon={item.icon}
           />
-        </div> */}
+        ))}
+      </BentoGrid>
     </>
   );
 }
-
 
 const SkeletonOne = () => {
   const features = [
@@ -67,14 +99,17 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2 p-2"
     >
-      <div className="grid grid-cols-2 gap-2 flex-grow">
+      <div className="grid grid-cols-2 gap-2 flex-grow  ">
         {features.map((feature, index) => (
-          <BackgroundBeamsWithCollision>
-
-            <FeatureBox key={index} title={feature.title} description={feature.description} />
-          </BackgroundBeamsWithCollision>
+          <FeatureBox key={index} title={feature.title} description={feature.description} />
         ))}
+        <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+        )}
+      />
       </div>
+      
     </motion.div>
   );
 };
@@ -93,15 +128,13 @@ const SkeletonTwo = () => {
     >
       <div className="grid grid-cols-2 gap-2 flex-grow">
         {features.map((feature, index) => (
-           <BackgroundBeamsWithCollision>
-
-             <FeatureBox key={index} title={feature.title} description={feature.description} />
-           </BackgroundBeamsWithCollision>
+          <FeatureBox key={index} title={feature.title} description={feature.description} />
         ))}
       </div>
     </motion.div>
   );
 };
+
 const SkeletonThree = () => {
   const variants = {
     initial: {
@@ -130,7 +163,6 @@ const SkeletonThree = () => {
       }}
     >
       <motion.div className="h-full w-full rounded-lg">
-        {/* Adding the ClientTweetCard here */}
         <ClientTweetCard id="1835722369819971792" className="shadow-2xl" />
       </motion.div>
     </motion.div>
@@ -141,7 +173,6 @@ const SkeletonFour = () => {
   const first = {
     initial: {
       x: 20,
-     
     },
     hover: {
       x: 0,
@@ -151,7 +182,6 @@ const SkeletonFour = () => {
   const second = {
     initial: {
       x: -20,
-
     },
     hover: {
       x: 0,
@@ -177,10 +207,10 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-xl text-xs text-center font-semibold text-neutral-500 mt-4">
-        Dr. John
+          Dr. John
         </p>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
-        Neurosurgeon
+          Neurosurgeon
         </p>
         <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Available
@@ -195,10 +225,10 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-xl text-xs text-center font-semibold text-neutral-500 mt-4">
-        Dr. Amy
+          Dr. Amy
         </p>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
-        ENT
+          ENT
         </p>
         <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Busy
@@ -216,10 +246,10 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-xl text-xs text-center font-semibold text-neutral-500 mt-4">
-        Dr. Lily
+          Dr. Lily
         </p>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-2">
-        Pediatrician
+          Pediatrician
         </p>
         <p className="border border-purple-500 bg-purple-100 dark:bg-purple-900/20 text-purple-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Available
@@ -228,6 +258,7 @@ const SkeletonFour = () => {
     </motion.div>
   );
 };
+
 const SkeletonFive = () => {
   const variants = {
     initial: {
@@ -285,6 +316,7 @@ const SkeletonFive = () => {
     </motion.div>
   );
 };
+
 const items = [
   {
     title: "For Hospitals",
@@ -330,7 +362,6 @@ const items = [
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
-
   {
     title: "Ask The AI",
     description: (
