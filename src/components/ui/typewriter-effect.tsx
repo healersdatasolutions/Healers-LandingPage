@@ -161,7 +161,7 @@ return (
       }}
     >
       <div
-        className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold"
+        className="text-xl sm:text-2xl md:text-4xl lg:text-3xl xl:text-[2.75rem] font-bold"
         style={{
           whiteSpace: "nowrap",
           overflowWrap: "break-word",
