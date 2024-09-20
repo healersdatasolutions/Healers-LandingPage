@@ -37,11 +37,19 @@ import { AbstractIcon } from "../Icons";
 
 const HeaderWords = [
     {
-        text: "Treatment",
+        text: "Bridging",
         className: "text-black dark:text-[#c4c3c3]",
     },
     {
-        text: "With",
+        text: "the",
+        className: "text-black dark:text-[#c4c3c3]",
+    },
+    {
+        text: "Gap",
+        className: "text-black dark:text-[#c4c3c3]",
+    },
+    {
+        text: "Between",
         className: "text-black dark:text-[#c4c3c3]",
     },
 
@@ -54,16 +62,13 @@ const HeaderWords = [
 
 
 const HeaderWords2 = [
+    
     {
-        text: "The",
+        text: "Patients",
         className: "text-black dark:text-[#c4c3c3]",
     },
     {
-        text: "Best",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "Doctor",
+        text: "And Hospitals",
         className: "text-black dark:text-white",
 
     },
@@ -75,6 +80,7 @@ import { BackgroundLines } from "../ui/background-lines";
 import HyperText from "../magicui/hyper-text";
 import NumberTicker from "../magicui/number-ticker";
 import DNA from "../3D_Elements/DNA";
+import WordRotate from "../magicui/word-rotate";
 // import { OrbitingCirclesDemo } from "../Circles";
 
 const Hero = () => {
@@ -171,8 +177,16 @@ const Hero = () => {
                                         <div className="subSubContainer flex flex-col  md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
 
                                             <div className="HeroTitle flex flex-col ">
-                                                <TypewriterEffectSmooth words={HeaderWords} nextline={false} />
-                                                <TypewriterEffectSmooth words={HeaderWords2} nextline={true} />
+                                                {/* <TypewriterEffectSmooth words={HeaderWords} nextline={false} />
+                                                <TypewriterEffectSmooth words={HeaderWords2} nextline={true} /> */}
+                                                <WordRotate
+  className="text-4xl font-bold text-black dark:text-[#c4c3c3] text-wrap text-center lg:text-left lg:pr-10"
+  sentences={[
+    "Simplifying Appointments, Revolutionizing Healthcare",
+    "Bridging the Gap Between Patients and Hospitals",
+    "Where Technology Meets Compassionate Care"
+  ]}
+/>
 
                                             </div>
 
