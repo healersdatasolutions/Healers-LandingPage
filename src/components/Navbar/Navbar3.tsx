@@ -28,40 +28,31 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Hospitals",
+    href: "#clients",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Hospitals Onboarded With Us",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "AI Patient Response",
+    href: "#features",
     description:
-      "For sighted users to preview content available behind a link.",
+      "AI which can suggest the best possible response to the patient's queries.",
   },
   {
     title: "Progress",
-    href: "/docs/primitives/progress",
+    href: "#bentotwo",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
+  
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Privacy Policy",
+    href: "/privacy-policy",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "document that explains how an organization handles any customer, client or employee information gathered in its operations.",
   },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+  
 ]
 
 export function NavigationMenuNew() {
@@ -91,20 +82,29 @@ export function NavigationMenuNew() {
                           Healer Healthcare
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                          This section is under construction. Please check back later.
+                          Great Things Are Being Develop By Our Incredible Team
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href="/docs" title="Introduction">
-                    An overview of the project and goals.
+                  <ScrollTo to="ytLinks" >
+
+                  <ListItem title="Introduction">
+                    Know About Our Breif and Story
                   </ListItem>
-                  <ListItem href="/docs/installation" title="Installation">
-                    Section under construction
+                  </ScrollTo>
+                  <ScrollTo to="clients" >
+
+                  <ListItem  title="Onboards">
+                    Get To Know About Our Clients
                   </ListItem>
-                  <ListItem href="/docs/primitives/typography" title="Typography">
-                    Section under construction
+                  </ScrollTo>
+                  <ScrollTo to="downloadMobileApp" >
+
+                  <ListItem  title="Mobile Application">
+                    Get Our Mobile Application 
                   </ListItem>
+                  </ScrollTo>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>

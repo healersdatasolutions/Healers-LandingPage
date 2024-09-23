@@ -9,10 +9,11 @@ import { useRef } from "react";
 // import PlusSvg from "../../assets/svg/PlusSvg";
 // import PropTypes from "prop-types";
 // import Video from "../Video";
-import { gradient, yourlogo } from "../../assets";
+import { gradient } from "../../assets";
 // import Lottie from 'react-lottie';
 // import animationData1 from '../../lotties/medicalIcon1.json';
 import { Tooltip } from "flowbite-react";
+import { motion } from 'framer-motion';
 
 
 // const defaultOptions = {
@@ -36,28 +37,38 @@ import { AbstractIcon } from "../Icons";
 
 const HeaderWords = [
     {
-        text: "Treatment",
+        text: "Bridging",
         className: "text-black dark:text-[#c4c3c3]",
     },
     {
-        text: "With",
+        text: "the",
+        className: "text-black dark:text-[#c4c3c3]",
+    },
+    {
+        text: "Gap",
+        className: "text-black dark:text-[#c4c3c3]",
+    },
+    {
+        text: "Between",
         className: "text-black dark:text-[#c4c3c3]",
     },
 
 
 ];
 
+
+
+    
+
+
 const HeaderWords2 = [
+    
     {
-        text: "The",
+        text: "Patients",
         className: "text-black dark:text-[#c4c3c3]",
     },
     {
-        text: "Best",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "Doctor",
+        text: "And Hospitals",
         className: "text-black dark:text-white",
 
     },
@@ -69,6 +80,7 @@ import { BackgroundLines } from "../ui/background-lines";
 import HyperText from "../magicui/hyper-text";
 import NumberTicker from "../magicui/number-ticker";
 import DNA from "../3D_Elements/DNA";
+import WordRotate from "../magicui/word-rotate";
 // import { OrbitingCirclesDemo } from "../Circles";
 
 const Hero = () => {
@@ -81,62 +93,45 @@ const Hero = () => {
     const dark = theme === 'dark';
     return (
         <>
-            <div className="hidden  absolute xl:flex justify-end  w-full  h-full z-[1] overflow-hidden">
-                <div className="w-full translate-x-16">
-
-                <DNA />
-                </div>
-
-
-
-
-            </div>
+        
+            
             <Section className="" crosses crossesOffset="lg:translate-y-[5.25rem]" customPaddings id="hero">
+                
 
                 <BackgroundLines className="">
-
+                    
 
                     <div className="h-[60rem] lg:h-screen md:h-[60rem] w-full rounded-md flex md:items-center md:justify-center bg-transparent dark:bg-black/[0.80] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+
                         <Spotlight
                             className="-top-90 sm:-top-40 left-0 md:left-60 md:-top-20"
                             fill={dark ? "#fff" : "#000"}
                         />
-                        {/* <div className="absolute translate-x-[28rem] -translate-y-[5rem]  rotate-[285deg] z-5">
-            <img alt="dna" src="/dna2.png " className=" opacity-100 w-[80%] z-20" />
-            </div> */}
-                        <div className="absolute w-full flex justify-end items-end">
+<div className="absolute ">
+<ScrollParallax >
 
 
-                            <ScrollParallax className="w-full ">
-                                <div className="flex -ml-40">
+    <div className="grid grid-cols-1 -translate-x-80 WhyNot ">
 
-                                    <AbstractIcon className="z-20 -ml-20" />
+        <AbstractIcon className="z-20 flex-1 " />
+        <div>
 
-                                </div>
+        </div>
 
-                            </ScrollParallax>
+        
+
+{/* <DNA /> */}
+{/* </div> */}
+
+    </div>
+
+</ScrollParallax>
 
 
-                        </div>
+</div>
+
+
                         <div className="subContainer" >
-
-
-                            {/* <MouseParallax ref={parallaxRef} className="relative z-10">
-
-                    
-                <div className="hidden sm:block absolute inset-0 right- w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
-                        <img className="w-full" src={gradient} width={942} height={942} alt="" />
-                    </div>
-                </div>
-                </MouseParallax> */}
-
-
-
-
-
-
-
 
                             <div className="absolute top-[30.25rem] -right-[20.375rem] w-[56.625rem] opacity-60 mix-blend-color-dodge pointer-events-none">
                                 <div className="absolute top-1/2 left-1/2 w-[58.85rem] h-[58.85rem] -translate-x-3/4 -translate-y-1/2">
@@ -170,31 +165,28 @@ const Hero = () => {
                                 </div>
                             )}
 
+                
                             <div className="container " ref={parallaxRef}>
-                                <div className="w-full relative text-center z-0 top-20 sm:top-40  max-w-full mb-[3.875rem] md:mb-20 lg:mb-[18.25rem] lg:mt-[1.25rem]">
-                                    {/* <h1 className="h1 mb-6 mt-10">
-                        <span className="text-green-500">
-                        Treatment {` `}
-                        </span>
-                         with the {` `}
-                    </h1> */}
-                                    {/* <h1 className="h1 mb-6">
-                  
-                        <span className="inline-block relative">
-                            Best Doctor <img src={curve} className="absolute top-full left-0 w-full xl:-mt-2" width={624} height={28} alt="" />
-                        </span>
-                    </h1> */}
-
+                                <div className="subcontainer w-full relative text-center z-0 top-20 sm:top-40  max-w-full mb-[3.875rem] md:mb-20 lg:mb-[18.25rem] lg:mt-[1.25rem]">
+                                  
 
                                     <div className="HeroTitleAndSubTitle  w-full grid grid-cols-1 lg:grid-cols-2  ">
 
 
 
-                                        <div className=" flex flex-col  md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
+                                        <div className="subSubContainer flex flex-col  md:-mt-48 lg:-mt-0 lg:self-center justify-start sm:justify-center items-center lg:items-start  h-[20rem] pt-[10rem] sm:pt-[0]  ">
 
                                             <div className="HeroTitle flex flex-col ">
-                                                <TypewriterEffectSmooth words={HeaderWords} nextline={false} />
-                                                <TypewriterEffectSmooth words={HeaderWords2} nextline={true} />
+                                                {/* <TypewriterEffectSmooth words={HeaderWords} nextline={false} />
+                                                <TypewriterEffectSmooth words={HeaderWords2} nextline={true} /> */}
+                                                <WordRotate
+  className="text-4xl font-bold text-black dark:text-[#c4c3c3] text-wrap text-center lg:text-left lg:pr-10"
+  sentences={[
+    "Simplifying Appointments, Revolutionizing Healthcare",
+    "Bridging the Gap Between Patients and Hospitals",
+    "Where Technology Meets Compassionate Care"
+  ]}
+/>
 
                                             </div>
 
@@ -221,20 +213,39 @@ const Hero = () => {
                         </div>                         
                         </div> */}
                                         <div>
+                                        
 
-                                            {/* <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
-      <img src="/HealersHealthcareOfficialLogo.png" alt="HealersLogoHero"
-                        className=" CompanyLogo object-cover hidden xl:flex w-[600px] h-[240px] hover:scale-110 transition duration-300 opacity-100 dark:opacity-50"/>
-      </span> */}
+                                        <motion.div className="pointer-events-none w-full h-full whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black"
+                                        animate={{
+                                            y: [0, -20, 0], // Moves up 20px and then back to the original position
+                                          }}
+                                          transition={{
+                                            duration: 3, // Duration of the up and down motion
+                                            repeat: Infinity, // Repeat indefinitely
+                                            ease: 'easeInOut', // Smooth easing
+                                          }}
+                                        
+                                        >
+                                                <img 
+                                                    src={dark ? "/dark-room.png" : "/light-room.png"} 
+                                                    alt="HealersLogoHero"
+                                                    className="CompanyLogo hidden sm:block -translate-x-15 -translate-y-16 object-cover xl:flex w-full h-full hover:scale-110 transition duration-300"
+                                                    style={{ width: '150%', height: '150%' }}
+                                                />
+                                            </motion.div>
+      
 
 
                                         </div>
                                     </div>
+
+
+                                    {/* counterSection */}
                                     <ScrollParallax className="w-full xl:hidden">
 
 
 
-                                        <div className="w-full z-40 flex  xl:hidden justify-center lg:justify-end mt-15 sm:-mt-10  ">
+                                        <div className="w-full z-40 flex   justify-center lg:justify-end mt-15 sm:-mt-10  ">
 
                                             <div className="flex flex-col px-5 py-1 gap-2 bg-transparent backdrop-blur border border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
 
@@ -337,41 +348,7 @@ const Hero = () => {
                     </div>
                 </div> */}
                         </div>
-                    <div className="mr-24 z-40 ">
-
-                    <ScrollParallax className="w-full mr-24">
-
-
-
-                        <div className="w-full  hidden xl:flex z-40  justify-center xl:justify-end mt-15   ">
-
-                            <div className="flex flex-col px-5 py-1 gap-2 bg-transparent backdrop-blur border border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
-
-                                <HyperText
-                                    className="text-xl font-bold text-gray-500 dark:text-white -mb-3"
-                                    text="Join Our Comunity"
-                                />
-                                <div className="flex gap-2 ">
-
-                                    <NumberTicker value={10000} />
-                                    <p className=" text-gray-500 dark:text-white">{` `}Joins</p>
-                                </div>
-                                <HyperText
-                                    className="text-xl font-bold  text-gray-500 dark:text-white -mb-3"
-                                    text="Our Branch"
-                                />
-                                <div className="flex gap-2">
-
-                                    <NumberTicker value={100} />
-                                    <p className=" text-gray-500 dark:text-white">{` `}Connections</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-
-                    </ScrollParallax>
-                    </div>
+                    
                     </div>
 
 
