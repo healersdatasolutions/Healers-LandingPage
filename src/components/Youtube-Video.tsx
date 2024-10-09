@@ -10,7 +10,7 @@ import React from 'react'
 const videos = [
   {
     id: 'dwLCCKXa8qY',
-    title: 'How Blockchain Technology Could Change Healthcare',
+    title: 'How Blockchain Technology Could Change Healthcare?',
     description: 'In this video we take a look at Blockchain Technology as it relates to being used in Healthcare. We explore ideas such as how Blockchain can make transferring patient data easier while also still being secure.'
   },
   {
