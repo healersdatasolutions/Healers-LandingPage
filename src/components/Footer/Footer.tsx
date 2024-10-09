@@ -71,7 +71,7 @@ const Footer = () => {
                 <ScrollTo to="contactUs">
                   Contact & Support
                 </ScrollTo>
-                <NavLink link="/#" label="Privacy Policy" />
+                <NavLink link="/privacy-policy" label="Privacy Policy" />
               </div>
             
             </LinkGroup>
