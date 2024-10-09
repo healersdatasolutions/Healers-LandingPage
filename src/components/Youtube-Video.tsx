@@ -21,7 +21,7 @@ const videos = [
   {
     id: 'vRSCQxFS9kw',
     title: 'Blockchain in Healthcare | Applications of Blockchain in Healthcare | use cases',
-    description: 'In this video, we'll explore the applications of blockchain in healthcare and discuss some of the potential use cases. We'll also discuss the implications of blockchain on the current healthcare system and how it could improve patient care.'
+    description: 'In this video, we willll explore the applications of blockchain in healthcare and discuss some of the potential use cases. We will also discuss the implications of blockchain on the current healthcare system and how it could improve patient care.'
   }
 ]
 
