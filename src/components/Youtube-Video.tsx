@@ -9,19 +9,19 @@ import React from 'react'
 // YouTube video data
 const videos = [
   {
-    id: 'mWrDMgj7hmw',
-    title: 'Blockchain in Healthcare',
-    description: 'Hi...Testing'
+    id: 'dwLCCKXa8qY',
+    title: 'How Blockchain Technology Could Change Healthcare',
+    description: 'In this video we take a look at Blockchain Technology as it relates to being used in Healthcare. We explore ideas such as how Blockchain can make transferring patient data easier while also still being secure.'
   },
   {
-    id: '1ibsQrnuEEg',
-    title: 'Fractional Knapsack Algorithm',
-    description: 'lorum ipsum dolor sit amet consectetur adipisicing elit. Quos, quae doloremque. Quisquam, quos. Quisquam, quos lorum ipsum dolor sit amet consectetur adipisicing elit '
+    id: 'ymTYvd6qVzM',
+    title: 'What Is Internet Computer? ICP',
+    description: 'Definition. Internet Computer #ICP is a set of protocols that allow independent data centers around the world to band together and offer a decentralised alternative to the current centralised internet cloud providers.'
   },
   {
-    id: 'C7plHMKIFcU',
-    title: 'The case for NFTs',
-    description: 'lorum ipsum dolor sit amet consectetur adipisicing elit. Quos, quae doloremque. Quisquam, quos. Quisquam, quos lorum ipsum dolor sit amet consectetur adipisicing elit '
+    id: 'vRSCQxFS9kw',
+    title: 'Blockchain in Healthcare | Applications of Blockchain in Healthcare | use cases',
+    description: 'In this video, we'll explore the applications of blockchain in healthcare and discuss some of the potential use cases. We'll also discuss the implications of blockchain on the current healthcare system and how it could improve patient care.'
   }
 ]
 
