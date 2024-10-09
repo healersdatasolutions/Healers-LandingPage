@@ -10,7 +10,7 @@ import React from 'react'
 
 // Sample hospital data
 const hospitals = [
-  { id: 1, name: "St. Mary's Hospital", img: "https://t3.ftcdn.net/jpg/02/11/15/66/360_F_211156620_CeBr5etdTNXLb231sFcQ8M9YD1OY5IW8.jpg", description: "Specialized in cardiology" },
+  { id: 1, name: "Divyaroshini Hospital", img: "/Latest4-removebg (1).jpeg", description: "Specialized in Neurology" },
   { id: 2, name: "Central Medical Center", img: "https://infrastructurepipeline.org/files/images/optimised/project_hero/files/images/project/generichospital7-6683a90066d1f804300495.jpg", description: "Full-service hospital" },
   { id: 3, name: "Care Hospital", img: "https://www.carehospitals.com/assets/images/main/vizag-health-city-704350.png", description: "Pediatric care experts" },
   { id: 4, name: "Sarka World Hospital", img: "https://www.impactguru.com/info/wp-content/uploads/2023/11/Sakra-World-Hospital.jpg", description: "Emergency and trauma center" },
