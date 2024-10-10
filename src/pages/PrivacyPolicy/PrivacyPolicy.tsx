@@ -1,11 +1,14 @@
 import { useTheme } from '../../components/ThemeProvider/theme-provider'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import { Button } from "../../components/ui/button"
+import { AccountDeletionForm } from './AccountAction'
 
 export default function PrivacyPolicy() {
   const { theme } = useTheme()
   const dark = theme === 'dark'
+  const [showDeletionForm, setShowDeletionForm] = useState(false)
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
@@ -76,8 +79,18 @@ export default function PrivacyPolicy() {
           <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at:</p>
           <p className="mt-2">Healers Data Solutions</p>
           <p>Email: jainbhomik@gmail.com, sahilshandil2@gmail.com</p>
+          
+          <div className="mt-8 text-center">
+            <Button onClick={() => setShowDeletionForm(true)}>
+              Account Deletion Request
+            </Button>
+          </div>
         </div>
       </div>
+      
+      {showDeletionForm && (
+        <AccountDeletionForm onClose={() => setShowDeletionForm(false)} />
+      )}
     </div>
   )
 }
