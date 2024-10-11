@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { FileText, UserCog, Calendar, Package, Plus, ChevronLeft, ChevronRight, User, MapPin, Phone, Clock, Briefcase, Search, CalendarIcon, Menu, CalendarCheck } from 'lucide-react'
 import { Button } from "./ui/button"
@@ -346,14 +344,15 @@ export default function DoctorRecord() {
             </div>
           </MouseParallax>
           <div className="bg-n-8/[0.5] rounded-lg p-4 overflow-x-auto shadow-lg">
-            <Table>
+          <Table>
               <TableHeader>
                 <TableRow className="border-r border-transparent rounded-lg">
                   <TableHead className="text-[#7047eb] border-r">ID</TableHead>
                   <TableHead className="text-[#7047eb] border-r">Name</TableHead>
                   <TableHead className="text-[#7047eb] border-r">Specialty</TableHead>
                   <TableHead className="text-[#7047eb] border-r">Days Available</TableHead>
-                  <TableHead className="text-[#7047eb] ">Duty Time</TableHead>
+                  <TableHead className="text-[#7047eb] border-r">Duty Time</TableHead>
+                  <TableHead className="text-[#7047eb]">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -364,6 +363,7 @@ export default function DoctorRecord() {
                       <TableCell><Skeleton className="h-4 w-32" /></TableCell>
                       <TableCell><Skeleton className="h-4 w-24" /></TableCell>
                       <TableCell><Skeleton className="h-4 w-32" /></TableCell>
+                      <TableCell><Skeleton className="h-4 w-24" /></TableCell>
                       <TableCell><Skeleton className="h-4 w-24" /></TableCell>
                     </TableRow>
                   ))
@@ -377,7 +377,12 @@ export default function DoctorRecord() {
                       <TableCell>{doctor.name}</TableCell>
                       <TableCell>{doctor.specialty}</TableCell>
                       <TableCell>{doctor.daysAvailable.join(', ')}</TableCell>
-                      <TableCell className='border-transparent'>{`${doctor.dutyStart} - ${doctor.dutyEnd}`}</TableCell>
+                      <TableCell>{`${doctor.dutyStart} - ${doctor.dutyEnd}`}</TableCell>
+                      <TableCell className='border-transparent'>
+                        <Link to={`/doctor/${doctor.id}`} className="text-[#7047eb] hover:underline">
+                          Doctor Details
+                        </Link>
+                      </TableCell>
                     </TableRow>
                   ))
                 )}
