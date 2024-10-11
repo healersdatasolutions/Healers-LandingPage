@@ -1,6 +1,7 @@
 import { MailIcon } from "lucide-react";
 import React from "react";
 import ScrollTo from "../ui/scrollTo";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -72,6 +73,7 @@ const Footer = () => {
                   Contact & Support
                 </ScrollTo>
                 <NavLink link="/privacy-policy" label="Privacy Policy" />
+                
               </div>
             
             </LinkGroup>
@@ -143,9 +145,19 @@ const Footer = () => {
                 </div>
                 <p className="text-sm text-body-color dark:text-dark-6">
                   &copy; 2025 Healers Healthcare. All rights reserved.
+                  <div className="text-red-600 style-none my-2 list-unstyled">
+
+                <Link to="/account-action">
+                Account Deletion Request
+                </Link>
+                
+                </div>
                 </p>
+                
               </div>
+              
             </div>
+            
           </div>
         </div>
         <div>
