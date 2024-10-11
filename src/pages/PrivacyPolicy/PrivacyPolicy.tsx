@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from "../../components/ui/button"
-import { AccountDeletionForm } from './AccountAction'
+
 
 export default function PrivacyPolicy() {
   const { theme } = useTheme()
@@ -88,9 +88,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
       
-      {showDeletionForm && (
-        <AccountDeletionForm onClose={() => setShowDeletionForm(false)} />
-      )}
+      
     </div>
   )
 }
