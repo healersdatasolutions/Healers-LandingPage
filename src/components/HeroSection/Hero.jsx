@@ -230,7 +230,7 @@ const Hero = () => {
                                                     src={dark ? "/dark-room.png" : "/light-room.png"} 
                                                     alt="HealersLogoHero"
                                                     className="CompanyLogo hidden sm:block -translate-x-15 -translate-y-16 object-cover xl:flex w-full h-full hover:scale-110 transition duration-300"
-                                                    style={{ width: '150%', height: '150%' }}
+                                                    style={{ width: '170%', height: '170%' }}
                                                 />
                                             </motion.div>
       

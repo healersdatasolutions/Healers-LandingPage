@@ -78,6 +78,18 @@ export default function BentoGrid2() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
+    <div className="relative">
+      <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
+        <div className="absolute -translate-y-[20%] -translate-x-[60%] size-[18.85rem] lg:size-[68.85rem]">
+          <img className="w-full rotate-[100deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
+        </div>
+      </div>
+      <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
+        <div className="absolute -translate-y-[20%] translate-x-[90%] size-[18.85rem] lg:size-[68.85rem]">
+          <img className="w-full rotate-[240deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
+        </div>
+      </div>
+
     <motion.div ref={ref} id="bentotwo" className="relative w-[60vh] md:w-[100vh] mx-auto p-10" style={{ opacity }}>
       <div className="grid grid-cols-12 gap-3 auto-rows-fr mb-[0.75rem]">
         <motion.div className="col-span-3" variants={floatingVariants} initial="floating" animate={controls}>
@@ -126,5 +138,6 @@ export default function BentoGrid2() {
         </motion.div>
       </div>
     </motion.div>
+    </div>
   )
 }
