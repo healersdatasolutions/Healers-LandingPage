@@ -76,12 +76,27 @@ export default function Feature3() {
   }, [])
 
   return (
-    <div className="max-w-8xl h-full mx-auto">
+    <div className="max-w-6xl h-full mx-auto relative">
+      <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
+        <div className="absolute -translate-y-[10%] -translate-x-[70%] size-[18.85rem] lg:size-[68.85rem]">
+          <img className="w-full rotate-[180deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
+        </div>
+      </div>
+      <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
+        <div className="absolute translate-y-[90%] -translate-x-[70%] size-[18.85rem] lg:size-[68.85rem]">
+          <img className="w-full rotate-[100deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
+        </div>
+      </div>
+      <div className="absolute opacity-40 mix-blend-color-dodge pointer-events-none">
+        <div className="absolute translate-y-[60%] translate-x-[90%] size-[18.85rem] lg:size-[68.85rem]">
+          <img className="w-full rotate-[240deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
+        </div>
+      </div>
       <div className="relative z-0 space-y-14 ">
         {cardData.map((card, index) => (
           <section
             key={card.id}
-            ref={(el) => (sectionRefs.current[index] = el)}
+            ref={(el) => { sectionRefs.current[index] = el }}
             data-index={index}
             className="[--i:0]"
             style={{ '--e': entered } as React.CSSProperties}
@@ -90,8 +105,10 @@ export default function Feature3() {
               ${index === 0 ? 'z-[30]' : index === 1 ? 'z-[29]' : index === 2 ? 'z-[28]': 'z-[27]'}
               ${entered >= index ? 'translate-y-0' : '-translate-y-[calc(100%*(var(--i)-var(--e)))]'}`}
             >
-              <div className="md:flex justify-around items-center my-5">
-                <div className="shrink-0 px-12 py-14 max-md:pb-0 md:pr-0">
+              <div className="md:grid grid-cols-3  justify-around items-center my-5" style={{
+                boxSizing: 'content-box',
+              }}>
+                <div className="col-span-1 shrink-0 px-6 py-14 max-md:pb-0 md:pr-0">
                   <div className="md:max-w-md">
                     <div className={`font-serif text-xl ${card.color} mb-2 relative inline-flex justify-center items-end`}>
                       {card.title}
@@ -99,14 +116,14 @@ export default function Feature3() {
                         <path d="M87.343 2.344S60.996 3.662 44.027 3.937C27.057 4.177.686 3.655.686 3.655c-.913-.032-.907-1.923-.028-1.999 0 0 26.346-1.32 43.315-1.593 16.97-.24 43.342.282 43.342.282.904.184.913 1.86.028 1.999" />
                       </svg>
                     </div>
-                    <h1 className="text-4xl font-extrabold text-[#242424] dark:text-slate-50 mb-4">{card.description}</h1>
+                    <h1 className="text-2xl font-extrabold text-[#242424] dark:text-slate-50 mb-4">{card.description}</h1>
                     <p className="text-[#6f6f6f] dark:text-slate-600 mb-6">{card.content}</p>
                     <a className="text-sm font-medium inline-flex items-center justify-center px-3 py-1.5 border border-slate-700 rounded-lg tracking-normal transition text-slate-300 hover:text-slate-50 group" href="#0">
                       Learn More <span className="text-[#6f6f6f] dark:text-slate-600 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
                     </a>
                   </div>
                 </div>
-                <img className="mx-auto rounded-lg lg:mx-10" src={card.image} width="800" height="900" alt={`Illustration ${card.id}`} />
+                <img className="mx-auto col-span-2 rounded-lg lg:mx-10" src={card.image} width="700" height="800" alt={`Illustration ${card.id}`} />
               </div>
               <div className="absolute left-12 bottom-0 h-14 flex items-center text-xs font-medium text-slate-800">0{card.id}</div>
             </Card>
