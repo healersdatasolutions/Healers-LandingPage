@@ -11,14 +11,14 @@ const Footer = () => {
           <div className="-mx-4 flex justify-between flex-wrap text-center sm:text-left">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
               <div className="mb-10 w-full">
-                <a href="/#" className="mb-2 inline-block max-w-[160px]">
+                <ScrollTo to="hero">
                   <img
                     src="/HealersHealthcareOfficialLogo.png"
                     alt="logo"
-                    className="max-w-full "
+                    className="max-w-[160px] "
                   />
                   
-                </a>
+                </ScrollTo>
 
                 {/* <div className="w-[80%] bg-gray-600 rounded-lg p-5 h-[80%] mb-5">
                     
@@ -82,10 +82,10 @@ const Footer = () => {
                 <ScrollTo to="features">
                   Our Features
                 </ScrollTo>
-                <ScrollTo to="faq">
+                <ScrollTo to="FAQ">
                   Queries
                 </ScrollTo>
-                <ScrollTo to="downloadMobileApp">
+                <ScrollTo to="app">
                   Download App
                 </ScrollTo>
                 <ScrollTo to="clients">

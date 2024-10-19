@@ -28,58 +28,22 @@ import { motion } from 'framer-motion';
 // import DNA from "../3D_Elements/DNA";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 // import { TypewriterEffectSmoothDemo } from "../Typewriter";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
-import { Spotlight } from "../ui/Spotlight";
+// import { Spotlight } from "../ui/Spotlight";
 import { AbstractIcon } from "../Icons";
 // import { Link } from "react-router-dom";
 
 
 
-const HeaderWords = [
-    {
-        text: "Bridging",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "the",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "Gap",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "Between",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-
-
-];
 
 
 
-    
 
-
-const HeaderWords2 = [
-    
-    {
-        text: "Patients",
-        className: "text-black dark:text-[#c4c3c3]",
-    },
-    {
-        text: "And Hospitals",
-        className: "text-black dark:text-white",
-
-    },
-];
 
 import { useTheme } from '../../components/ThemeProvider/theme-provider';
 import { Link } from "react-router-dom";
 import { BackgroundLines } from "../ui/background-lines";
 import HyperText from "../magicui/hyper-text";
 import NumberTicker from "../magicui/number-ticker";
-import DNA from "../3D_Elements/DNA";
 import WordRotate from "../magicui/word-rotate";
 // import { OrbitingCirclesDemo } from "../Circles";
 
@@ -103,10 +67,10 @@ const Hero = () => {
 
                     <div className="h-[60rem] lg:h-screen md:h-[60rem] w-full rounded-md flex md:items-center md:justify-center bg-transparent dark:bg-black/[0.80] antialiased bg-grid-white/[0.02] relative overflow-hidden">
 
-                        <Spotlight
+                        {/* <Spotlight
                             className="-top-90 sm:-top-40 left-0 md:left-60 md:-top-20"
                             fill={dark ? "#fff" : "#000"}
-                        />
+                        /> */}
 <div className="absolute ">
 <ScrollParallax >
 
@@ -191,7 +155,7 @@ const Hero = () => {
                                             </div>
 
                                             <div className="subtext w-[75%] text-center lg:text-left" >
-                                                <TextGenerateEffect words={words} />
+                                                <TextGenerateEffect words={words} className="text-center lg:text-left"/>
                                             </div>
                                         </div>
 
@@ -245,7 +209,7 @@ const Hero = () => {
 
 
 
-                                        <div className="w-full z-40 flex   justify-center lg:justify-end mt-15 sm:-mt-10  ">
+                                        <div className="w-full z-40 flex   justify-center  lg:justify-end mt-28 sm:-mt-10  ">
 
                                             <div className="flex flex-col px-5 py-1 gap-2 bg-transparent backdrop-blur border border-white/10 rounded-2xl xl:flex transition hover:scale-105 ">
 
@@ -282,7 +246,7 @@ const Hero = () => {
 
                             </div>
                                 <div className="bottomButtonsSticky fixed inset-0 top-auto  w-full z-50 flex justify-around mb-10">
-                                    <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+                                    <Tooltip title="Coming Soon" position="top" content="Get the best experience on the go with our mobile app">
                                         <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
                                             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#393BB2_50%,#E2CBFF_100%)]" />
                                             <span className="text-black inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#fff] px-3 py-1 text- font-medium backdrop-blur-3xl ">
@@ -290,8 +254,8 @@ const Hero = () => {
                                             </span>
                                         </button>
                                     </Tooltip>
-                                    <Tooltip title="Coming Soon" position="top" content="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
-                                        <Link to="/login-signup">
+                                    <Tooltip title="Coming Soon" position="top" content="Manage your hospital data with our Electronic Health Record System">
+                                        <Link to="https://gyoj3-uaaaa-aaaap-qkfra-cai.icp0.io/login">
                                             <button className="z-20 relative inline-flex h-12  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transform hover:-translate-y-1 transition duration-400">
                                                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                                                 <span className="text-[#c4c3c3] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#000000] px-3 py-1 text- font-medium backdrop-blur-3xl ">

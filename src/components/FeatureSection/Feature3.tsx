@@ -76,7 +76,7 @@ export default function Feature3() {
   }, [])
 
   return (
-    <div className="max-w-6xl h-full mx-auto relative">
+    <div className="max-w-6xl h-full mx-5 sm:mx-auto relative ">
       <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
         <div className="absolute -translate-y-[10%] -translate-x-[70%] size-[18.85rem] lg:size-[68.85rem]">
           <img className="w-full rotate-[180deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
