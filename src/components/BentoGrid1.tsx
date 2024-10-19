@@ -59,7 +59,7 @@ const SkeletonOne = () => {
       whileHover="hover"
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      <motion.div className="h-full rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 grid grid-cols-2 mx-auto gap-16 p-6 items-center justify-center">
+      <motion.div className="h-full rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 grid grid-cols-2 mx-auto gap-16  items-center justify-center">
         <img
           src="https://www.citizenshospitals.com/static/uploads/130789a4-764e-4ee3-88fe-68f9278452d6-1692966652977.png"
           alt="avatar"
@@ -252,7 +252,7 @@ export default function BentoGridThirdDemo() {
 
   return (
     <>
-      <p className="mt-36 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
+      <p className="mt-36 mb-10 z-10 whitespace-pre-wrap text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white ">
         The More You Can Do With Healers
       </p> 
       <div className="relative">
@@ -266,7 +266,7 @@ export default function BentoGridThirdDemo() {
           <img className="w-full rotate-[230deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
         </div>
       </div>
-      <BentoGrid className="max-w-6xl mx-auto mt-32 md:auto-rows-[20rem] ">
+      <BentoGrid className="max-w-6xl mx-5 sm:mx-auto mt-32 md:auto-rows-[20rem] ">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}

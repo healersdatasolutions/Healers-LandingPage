@@ -83,7 +83,7 @@ const VideoCard = ({ video, index }) => {
 
 export default function VideoComponent() {
   return (
-    <section className="py-12 px-4 max-w-7xl mx-auto h-full flex items-center">
+    <section className="py-12 px-4 max-w-7xl mx-5 sm:mx-auto h-full flex items-center">
       <div className="w-full  space-y-8">
         {videos.map((video, index) => (
           <VideoCard key={video.id} video={video} index={index} />

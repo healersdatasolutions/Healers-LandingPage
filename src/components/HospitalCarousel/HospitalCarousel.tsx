@@ -23,8 +23,8 @@ export default function HospitalCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
 
   return (
-    <div className=" relative">
-      <div className="absolute opacity-40 mix-blend-color-dodge pointer-events-none">
+    <div className=" relative" id="clients">
+      <div className="absolute opacity-40 mix-blend-color-dodge pointer-events-none ">
         <div className="absolute -translate-y-[20%] translate-x-[90%] size-[18.85rem] lg:size-[68.85rem]">
           <img className="w-full rotate-[180deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
         </div>
@@ -37,7 +37,7 @@ export default function HospitalCarousel() {
       <h2 id="clients" className="mt-36 mb-10 z-10 text-center text-3xl sm:text-5xl font-medium tracking-tighter text-black dark:text-white">
         Clients Onboard with Us
       </h2>
-      <div className="max-w-6xl mx-auto py-10 ">
+      <div className="max-w-6xl mx-5 sm:mx-auto py-10  ">
         <Carousel
           opts={{
             align: "start",

@@ -28,11 +28,11 @@ export function ContactUs() {
         <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
           To know More Join Us
         </h1>
-        <p className="text-center mt-2 mb-4 text-neutral-300 relative z-20">
+        <p className="text-center text-sm sm:text-base mt-2 mb-4 text-neutral-300 relative z-20">
           Get on early access to the latest updates.
         </p>
         
-        <form className="z-30 flex gap-4 items-center max-w-sm mx-auto">   
+        <form className="z-30 flex flex-col sm:flex-row  gap-4 items-center max-w-sm mx-auto ">   
           <label htmlFor="email" className="sr-only">Search</label>
           <div className="relative w-full">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
