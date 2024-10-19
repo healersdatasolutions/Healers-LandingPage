@@ -78,7 +78,7 @@ export default function BentoGrid2() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
-    <div className="relative">
+    <div className="relative -translate-x-4 sm:-translate-x-0">
       <div className="absolute opacity-60 mix-blend-color-dodge pointer-events-none">
         <div className="absolute -translate-y-[20%] -translate-x-[60%] size-[18.85rem] lg:size-[68.85rem]">
           <img className="w-full rotate-[100deg] opacity-100" src="/gradient.png" width={942} height={942} alt="" />
@@ -91,7 +91,7 @@ export default function BentoGrid2() {
       </div>
 
     <motion.div ref={ref} id="bentotwo" className="relative w-[60vh] md:w-[100vh] mx-auto p-10" style={{ opacity }}>
-      <div className="grid grid-cols-12 gap-3 auto-rows-fr mb-[0.75rem]">
+      <div className="grid grid-cols-12 gap-3 auto-rows-fr mb-[0.75rem] max-w-6xl mx-auto">
         <motion.div className="col-span-3" variants={floatingVariants} initial="floating" animate={controls}>
           <img src="/card1.png" alt="" className="w-full h-full object-cover hover:scale-95 transition duration-200" />
         </motion.div>
@@ -114,11 +114,11 @@ export default function BentoGrid2() {
         initial="floating"
         animate={controls}
       > */}
-        <img src="/circleBento.png" alt="" className="absolute w-52 h-52 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
+        <img src="/circleBento.png" alt="" className="absolute w-28 h-28 md:w-52 md:h-52 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
         
       {/* </motion.div> */}
 
-      <div className="grid grid-cols-12 gap-3 mt-[0.75rem]">
+      <div className="grid grid-cols-12 gap-3 mt-[0.75rem] max-w-6xl mx-auto ">
         <div className="flex flex-col justify-between col-span-3">
           <motion.div variants={floatingVariants6} initial="floating" animate={controls}>
             <img src="/card4.png" alt="" className="w-full  object-cover hover:scale-95 transition duration-200" />
